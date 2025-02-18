@@ -38,12 +38,10 @@ const ChooseImages = (category: string) => {
     return spaceImages;
   } else if (category == "Toy") {
     return toyImages;
-  } else if (category == "Plant") {
+  } else if (category == "Food") {
     return foodImages;
   } else {
-    const options = ["Food", "Space", "Plant", "Toy"];
-    const randomChoice = options[Math.floor(Math.random() * options.length)];
-    return randomChoice;
+    return foodImages;
   }
 };
 
