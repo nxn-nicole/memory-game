@@ -93,19 +93,20 @@ const Gameboard = () => {
   }, [isMatched]);
 
   return (
-    <div className="flex flex-col min-h-screen items-center bg-blue-200">
+    <div className="flex flex-col min-h-screen items-center bg-[#E3FFFF]">
       <button
         onClick={restartGame}
-        className="mt-15 mb-10 px-4 py-2 bg-green-400 text-white rounded"
+        className="mt-15 mb-10 px-4 py-2 bg-[#0ED5AD] text-white rounded"
       >
         Start Game
       </button>
 
       {gameOver && (
-        <div className="flex flex-col w-70 h-60 bg-green-400 text-white rounded">
+        <div className="flex flex-col w-70 h-70 bg-[#0ED5AD] text-white rounded">
           <div className="flex flex-col items-center justify-center">
-            <p className="text-2xl mt-15 font-bold">Congratulations!</p>
-            <p className="text-lg">Your Total Attemps: {clickCount}</p>
+            <p className="text-2xl mt-15 mb-3 font-bold">Congratulations!</p>
+            <p className="text-lg">Your Total Attemps: </p>
+            <p className="text-lg">{clickCount}</p>
             <img src={smile} alt="smile" className="w-8 h-8 m-4" />
             <p>Click start to play again.</p>
           </div>

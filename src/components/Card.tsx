@@ -14,7 +14,7 @@ const Card = ({ image, isFlipped, matched, onClick }: CardProps) => {
       {!matched && (
         <div
           className={`flex w-30 h-30 items-center justify-center rounded-lg transition-colors duration-300 cursor-pointer ${
-            isFlipped ? "bg-white border-blue-400 border-3" : "bg-blue-400"
+            isFlipped ? "bg-white border-[#6DD6F3] border-3" : "bg-[#6DD6F3]"
           }`}
           onClick={onClick}
         >
