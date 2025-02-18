@@ -32,14 +32,18 @@ const toyImages = [car, crayon, block, bear, magic, abacus];
 const plantImages = [flower1, flower2, flower3, flower4, flower5, flower6];
 
 const ChooseImages = (category: string) => {
-  if (category == "Food") {
-    return foodImages;
+  if (category == "Plant") {
+    return plantImages;
   } else if (category == "Space") {
     return spaceImages;
   } else if (category == "Toy") {
     return toyImages;
+  } else if (category == "Plant") {
+    return foodImages;
   } else {
-    return plantImages;
+    const options = ["Food", "Space", "Plant", "Toy"];
+    const randomChoice = options[Math.floor(Math.random() * options.length)];
+    return randomChoice;
   }
 };
 
