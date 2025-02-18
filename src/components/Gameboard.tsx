@@ -1,15 +1,8 @@
 import Card from "./Card";
-import apple from "../assets/images/food/apple.png";
-import icecream from "../assets/images/food/icecream.png";
-import mochi from "../assets/images/food/mochi.png";
-import melon from "../assets/images/food/melon.png";
-import burger from "../assets/images/food/burger.png";
-import donut from "../assets/images/food/donut.png";
 import smile from "../assets/images/smile.png";
-
 import { useEffect, useState } from "react";
-
-const foodImages = [apple, icecream, melon, mochi, burger, donut];
+import Topic from "./Topic";
+import ChooseImages from "./ChooseImages";
 
 const shuffleArray = (array: string[]) => {
   const shuffled = [...array];
@@ -31,10 +24,16 @@ const Gameboard = () => {
   const [selectedCards, setSelectedCards] = useState<number[]>([]);
   const [clickCount, setClickCount] = useState<number>(0);
   const [gameOver, setGameOver] = useState<boolean>(false);
+  const [selectedTopic, setSelectedTopic] = useState("");
+
+  const Images = ChooseImages(selectedTopic);
 
   // 初始化游戏
   const restartGame = () => {
-    const duplicatedImages = [...foodImages, ...foodImages];
+    if (selectedTopic == "Topic") {
+      setSelectedTopic("Food");
+    }
+    const duplicatedImages = [...Images, ...Images];
     const shuffledCards = shuffleArray(duplicatedImages);
     setCards(shuffledCards);
     setFlippedCards(new Array(12).fill(false));
@@ -93,22 +92,27 @@ const Gameboard = () => {
   }, [isMatched]);
 
   return (
-    <div className="flex flex-col min-h-screen items-center bg-[#E3FFFF]">
-      <button
-        onClick={restartGame}
-        className="mt-15 mb-10 px-4 py-2 bg-[#0ED5AD] text-white rounded"
-      >
-        Start Game
-      </button>
+    <div className="flex flex-col min-h-screen items-center justify-center bg-[#E3FFFF]">
+      <div className="flex flex-row w-140 items-center justify-between mt-15 mb-10">
+        <Topic onSelect={setSelectedTopic}></Topic>
+        <button
+          onClick={restartGame}
+          className="w-40 py-2 bg-[#0ED5AD] text-white rounded-lg text-lg"
+        >
+          Start Game
+        </button>
+      </div>
 
       {gameOver && (
-        <div className="flex flex-col w-70 h-70 bg-[#0ED5AD] text-white rounded">
+        <div className="flex flex-col items-center w-70 h-70 bg-[#0ED5AD] text-white rounded">
           <div className="flex flex-col items-center justify-center">
             <p className="text-2xl mt-15 mb-3 font-bold">Congratulations!</p>
             <p className="text-lg">Your Total Attemps: </p>
             <p className="text-lg">{clickCount}</p>
             <img src={smile} alt="smile" className="w-8 h-8 m-4" />
-            <p>Click start to play again.</p>
+            <p className="text-xs">
+              Select a topic and click start to play again.
+            </p>
           </div>
         </div>
       )}
