@@ -27,7 +27,7 @@ const Topic = ({ onSelect }: { onSelect: (topic: string) => void }) => {
             className="border-b-2 border-[#0ED5AD] px-15 py-2"
             onClick={() => handleTopicChoice("Food")}
           >
-            Food
+            Food8
           </button>
           <button
             className="border-b-2 border-[#0ED5AD] px-15 py-2"
