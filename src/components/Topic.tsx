@@ -33,7 +33,7 @@ const Topic = ({ onSelect }: { onSelect: (topic: string) => void }) => {
             className="border-b-2 border-[#0ED5AD] px-15 py-2"
             onClick={() => handleTopicChoice("Space")}
           >
-            Space
+            Spacee
           </button>
           <button
             className="border-b-2 border-[#0ED5AD] px-15 py-2"
