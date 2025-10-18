@@ -36,7 +36,7 @@ const ChooseImages = (category: string) => {
     return plantImages;
   } else if (category == "Space0") {
     return spaceImages;
-  } else if (category == "Toy") {
+  } else if (category == "Toy11") {
     return toyImages;
   } else if (category == "Food") {
     return foodImages;
