@@ -99,7 +99,7 @@ const Gameboard = () => {
           onClick={restartGame}
           className="w-40 py-2 bg-[#0ED5AD] text-white rounded-lg text-lg"
         >
-          Start Game00
+          Start Game
         </button>
       </div>
 
