@@ -34,7 +34,7 @@ const plantImages = [flower1, flower2, flower3, flower4, flower5, flower6];
 const ChooseImages = (category: string) => {
   if (category == "Plant") {
     return plantImages;
-  } else if (category == "Space") {
+  } else if (category == "Space0") {
     return spaceImages;
   } else if (category == "Toy") {
     return toyImages;
